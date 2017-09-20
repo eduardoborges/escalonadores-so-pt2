@@ -3,6 +3,7 @@ public class Job {
     
     private int startTime = 0, endTime = 0;
     
+    
     public int ProcessCompletionTime;
     public int processArrivalTime;
     public int waitingTime;
@@ -12,12 +13,19 @@ public class Job {
     // global variables
     private int arrivalTime, cpuTime, processId;
     
-    public Job(int id, int submitTime, int CPUTime) {
+    public Job(int id, int submitTime, int CPUTime, JobFinishEvent evt) {
         super();
         this.id             = id;
         this.submitTime     = submitTime;
         this.CPUTime        = CPUTime;
         this.CPUTimeLeft    = CPUTime;
+        this.evt            = evt;
+    }
+    
+    public Job(int processId, int arrivalTime, int cpuTime) {
+        this.processId      = processId;
+        this.arrivalTime    = arrivalTime;
+        this.cpuTime        = cpuTime;
     }
     
     public void start(int sysTime) {
@@ -143,5 +151,6 @@ public class Job {
 	public void setProcessId(int processId) {
 		this.processId = processId;
 	}
+    
     
 }

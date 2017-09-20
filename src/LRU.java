@@ -1,4 +1,5 @@
-//https://www.programcreek.com/2013/03/leetcode-lru-cache-java/
+
+
 
 import java.util.HashMap;
 
@@ -12,6 +13,11 @@ public class LRU {
         this.capacity = capacity;
     }
 
+    /**
+     * Get Node by key
+     * @param key the key
+     * @return the Node
+     */
     public int get(int key) {
         if (map.containsKey(key)) {
             Node n = map.get(key);
@@ -22,6 +28,11 @@ public class LRU {
 
         return -1;
     }
+
+    /**
+     * Remove node
+     * @param n the node to remove
+     */
 
     public void remove(Node n) {
         if (n.pre != null) {
@@ -38,6 +49,10 @@ public class LRU {
 
     }
 
+    /**
+     * Set head of the hashmap
+     * @param n the node
+     */
     public void setHead(Node n) {
         n.next = head;
         n.pre = null;
@@ -51,6 +66,11 @@ public class LRU {
             end = head;
     }
 
+    /**
+     * Add item (or set, by the way) on de Hashmap
+     * @param key the key of Node
+     * @param value the vlue of Node
+     */
     public void set(int key, int value) {
         if (map.containsKey(key)) {
             Node old = map.get(key);
@@ -67,7 +87,6 @@ public class LRU {
             } else {
                 setHead(created);
             }
-
             map.put(key, created);
         }
     }

@@ -38,7 +38,6 @@ public class RoundRobin {
         float avgTurnArroundTime = 0;
         float avgWaitigTime = 0;
         int c = 1;
-        System.out.println("============================================ ");
         System.out.println("Process ID | Turnaround time | Waiting time ");
         System.out.println("============================================ ");
         Object[] job = jobList.toArray();
@@ -51,9 +50,8 @@ public class RoundRobin {
             c++;
         }
         System.out.println("===============================================");
-        System.out.println( "Avg waiting time = " + avgWaitigTime/temp.length);
-        System.out.println("===============================================");
-        System.out.println( "Avg turn round time = " + avgTurnArroundTime/temp.length);
+        System.out.println("- Avg waiting time = " + avgWaitigTime/temp.length);
+        System.out.println("- Avg turn round time = " + avgTurnArroundTime/temp.length);
         System.out.println("===============================================");
     }
     public void run(List<Job> jobList, int quantum) {

@@ -1,2 +1,2 @@
-src/*.class
-bin/*.class
+/src/*.class
+/bin/*.class

@@ -1,13 +1,13 @@
-class Node{
-    private int key;
-    private int value;
-    Node pre;
-    Node next;
- 
-    public Node(int key, int value){
-        this.key    = key;
-        this.value  = value;
-    }
+class Node {
+	private int key;
+	private int value;
+	Node pre;
+	Node next;
+
+	public Node(int key, int value) {
+		this.key = key;
+		this.value = value;
+	}
 
 	/**
 	 * @return the key
