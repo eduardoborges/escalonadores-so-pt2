@@ -1,6 +1,6 @@
 class Node{
-    int key;
-    int value;
+    private int key;
+    private int value;
     Node pre;
     Node next;
  
@@ -8,4 +8,32 @@ class Node{
         this.key    = key;
         this.value  = value;
     }
+
+	/**
+	 * @return the key
+	 */
+	public int getKey() {
+		return key;
+	}
+
+	/**
+	 * @param key the key to set
+	 */
+	public void setKey(int key) {
+		this.key = key;
+	}
+
+	/**
+	 * @return the value
+	 */
+	public int getValue() {
+		return value;
+	}
+
+	/**
+	 * @param value the value to set
+	 */
+	public void setValue(int value) {
+		this.value = value;
+	}
 }
