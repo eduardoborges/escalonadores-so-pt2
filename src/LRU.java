@@ -17,7 +17,7 @@ public class LRU {
             Node n = map.get(key);
             remove(n);
             setHead(n);
-            return n.value;
+            return n.getValue();
         }
  
         return -1;
@@ -54,13 +54,13 @@ public class LRU {
     public void set(int key, int value) {
         if(map.containsKey(key)){
             Node old = map.get(key);
-            old.value = value;
+            old.setValue(value);
             remove(old);
             setHead(old);
         }else{
             Node created = new Node(key, value);
             if(map.size()>=capacity){
-                map.remove(end.key);
+                map.remove(end.getKey());
                 remove(end);
                 setHead(created);
  
